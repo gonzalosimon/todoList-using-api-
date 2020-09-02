@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import './index.css';
-import App from './App';
+import App from './FirstPage';
 import reducer from './reducer';
 
 
