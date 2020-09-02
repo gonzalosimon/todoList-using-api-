@@ -76,16 +76,16 @@ class List extends React.Component {
 	render() {
 		return(
 			<div>
-			<ul>
+			<ul className="d-flex flex-column-reverse todo-list">
 				{this.postData}
 			{this.props.items.map((item, index) => (
-				<li key={index}>
+				<li className="form-check" key={index}>
 					<input type="checkbox" className="form-check-label" checked={item.completed} onChange={() => {this.toggleItem(item)}} />
 					<span style={{textDecoration: item.completed ? 'line-through': 'none' }} >
 					{item.title}
 					</span>
 					<button 
-					className="button-close" 
+					className="remove button-close" 
 					onClick={
 						() => {this.removeItem({item})}
 					}>X</button>

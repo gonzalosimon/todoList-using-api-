@@ -77,36 +77,38 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <div className="padding">
-         <div className="row container d-flex justify-content-center">
-            <div className="col-lg-12">
-                <div className="card px-3">
-                    <div className="card-body"></div>
-                    
-                      <h1 className="card-title" >To-do List:</h1>
-                      <div class="add-items d-flex">
-                      <form onSubmit={this.addTodo}>
-                        
-                      <input 
-                        type="text" 
-                        placeholder="What do you need to do?" 
-                        className="form-control todo-list-input inputbox" 
-                        value={this.state.value}
-                        onChange={this.handleOnChange}
-                      /> 
-                      <input type="submit" className="button add btn btn-primary font-weight-bold todo-list-add-btn" value="Add!" />
-                      </form>
-                      <div class="list-wrapper">
- <br/>
-                      <List items={this.props.todos} removeTodo={this.removeTodo} toggleTodo={this.toggleTodo} />
-                      </div>
+         <div className="page-content page-container" id="page-content">
+             <div className="padding">
+                 <div className="row container d-flex justify-content-center">
+                     <div className="col-lg-12">
+                         <div className="card px-3">
+                             <div className="card-body">
+                                 <h4 className="header card-title">Todo list</h4>
+                                 <form onSubmit={this.addTodo}>
+                                   <input 
+                                     type="text" 
+                                     placeholder="What do you need to do?" 
+                                     className="myInput form-control todo-list-input inputbox" 
+                                     value={this.state.value}
+                                     onChange={this.handleOnChange}
+                                   /> 
+                                   <input type="submit" className="button addBtn add btn-primary font-weight-bold todo-list-add-btn" value="Add!" />
+                                 </form>
+                                 <div className="add-items d-flex">
+                                 
+                                 <div className="list-wrapper">
+                                 <br/>
+                                 <List items={this.props.todos} removeTodo={this.removeTodo} toggleTodo={this.toggleTodo} />
+                                 
+                                 </div>
+                             </div>
+                         </div>
                      </div>
+                    </div>
                  </div>
-                 </div>
-             </div>
-             
-             </div>
-          </div>
+             </div>            
+         </div>
+      </div>
     );
   }
 }

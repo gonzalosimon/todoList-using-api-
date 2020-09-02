@@ -1,31 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gayathri&display=swap');
 
-body {
-	background-color: #b3b3b3
-  }
  
-  .flex {
-	-webkit-box-flex: 1;
-	-ms-flex: 1 1 auto;
-	flex: 1 1 auto
-  }
- 
-  @media (max-width:991.98px) {
-	.padding {
-	    padding: 1.5rem
-	}
-  }
- 
-  @media (max-width:767.98px) {
-	.padding {
-	    padding: 1rem
-	}
-  }
- 
-  .padding {
-	padding: 5rem
-  }
-  
 .container {
   padding: 10px;
   font-family: 'Gayathri', sans-serif;
@@ -42,11 +17,34 @@ body {
 	padding: 5px;
 	width: 75px;
 	font-size: 14px;
+	text-align: center;
+	float: right;
 }
 
 .button-close {
+	text-align: center;
+	float: right  !important;
 	margin-left: 10px;
 }
+
+.card {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none
+  }
+  
+  .card .card-body {
+	padding: 1.25rem 1.75rem;
+	width: 100%;
+  }
+ 
+  .card-body {
+	  
+	flex: 1 1 auto;
+	padding: 1.25rem
+  }
+ 
 
 .pagination {
 	margin: 15px auto;
@@ -77,7 +75,118 @@ body {
 	border-radius: unset
     }
 
-    .list-wrapper {
+   
+    /* Remove margins and padding from the list */
+    ul {
+	margin: 0;
+	padding: 0;
+
+	/* make the list items unselectable */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    }
+    
+    /* Set all odd list items to a different color (zebra-stripes) */
+    ul li:nth-child(odd) {
+	background: #f9f9f9;
+    }
+    
+    /* Darker background-color on hover */
+    ul li:hover {
+	background: #ddd;
+    }
+    
+    /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+	background: #888;
+	color: #fff;
+	text-decoration: line-through;
+    }
+    
+
+    
+    .header {
+	background-color: dodgerblue;
+	padding: 30px 40px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	text-align: center;
+
+    }
+    
+    /* Clear floats after the header */
+    .header:after {
+	content: "";
+	display: table;
+	clear: both;
+    }
+    
+  .add-items {
+	margin-bottom: 1.5rem;
+	overflow: hidden
+  }
+ 
+  .d-flex {
+	display: flex !important
+  }
+ 
+  .add-items input[type="text"] {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	width: 100%;
+	background: transparent
+  }
+ 
+  .add-items .btn {
+	display: flex;
+	flex-direction: row;  
+	margin-left: .5rem
+  }
+ 
+  .btn {
+	font-size: 0.875rem;
+	line-height: 1;
+	font-weight: 400;
+	padding: .7rem 1.5rem;
+	border-radius: 0.1275rem;
+	display: flex;
+	flex-direction: row;  
+	padding: 10px;
+	width: 25%;
+	background: #d9d9d9;
+	color: #555;
+	float: left;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.3s;
+	border-radius: 0;
+}
+ 
+  .list-wrapper {
+	height: 100%;
+	max-height: 100%
+  }
+ 
+  .add-items {
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;  
+  }
+ 
+  .add-items input[type="text"] {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	width: 100%;
+	background: transparent
+  }
+ 
+  
+  .list-wrapper {
 	height: 100%;
 	max-height: 100%
   }
@@ -115,12 +224,10 @@ body {
  
   .list-wrapper .remove {
 	cursor: pointer;
-	font-size: 1.438rem;
-	font-weight: 600;
-	width: 1.25rem;
-	height: 1.25rem;
-	line-height: 20px;
-	text-align: center
+	width: 1.5rem;
+	height: 1.5rem;
+	text-align: center;
+	float: left;
   }
  
   .list-wrapper .completed {
@@ -129,48 +236,27 @@ body {
   }
  
   .list-wrapper ul li .form-check {
-	max-width: 90%;
+	max-width: 100%;
 	margin-top: .25rem;
 	margin-bottom: .25rem
   }
-
-   .list-wrapper ul li .form-check,
- .list-wrapper ul li .form-check .form-check-label {
-	text-overflow: ellipsis;
-	overflow: hidden;
-	max-width: 100%;
-	white-space: nowrap
-  }
-  .list-wrapper input[type="checkbox"] {
-	margin-right: 15px
-  }
-
-  .list-wrapper ul li .form-check,
- .list-wrapper ul li .form-check .form-check-label
- {
+ 
+  .list-wrapper ul li.list-wrapper ul li  .chat-list .list .info p {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	max-width: 100%;
 	white-space: nowrap
   }
  
-  
-  .form-control {
-	border: 1px solid #f3f3f3;
-	font-weight: 400;
-	font-size: 0.875rem
-  }
- 
-  .form-control {
+  .form-check {
+	align-content: center;
+	position: relative;
 	display: block;
-	width: 100%;
-	padding: 0.875rem 1.375rem;
-	font-size: 1rem;
-	line-height: 1;
-	color: #495057;
-	background-color: #ffffff;
-	background-clip: padding-box;
-	border: 1px solid #ced4da;
-	border-radius: 2px;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 0
   }
+ 
+  .list-wrapper ul li, ul li .dropdown-item {
+	display: flex !important
+  }	
