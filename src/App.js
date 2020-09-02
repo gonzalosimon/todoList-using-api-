@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Todo from './FistPage.js';
+import Todo from './FirstPage.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class App extends Component {
+class App extends React.Component {
       render() {
         return (
           <Router>
             <div className="container">
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link to="/" className="navbar-brand">ListApp</Link>
+                <Link to="/" className="navbar-brand">TodoApp</Link>
               </nav>
               <form>
                 <label>
@@ -20,13 +20,13 @@ class App extends Component {
                   Password:
                   <input type="text" placeholder="**************" name="name" />
                 </label>
-                      <Link to="/FirstPage" className="nav-link">Log In</Link>
+                      <Link to="/first" className="nav-link">Log In</Link>
               </form>
     
               <ul className="navbar-nav mr-auto">
                   </ul>
               <br/>
-              <Route path="/FirstPage" exact component={Todo} />
+              <Route path="/first" component={Todo} />
             </div>
           </Router>
         );
