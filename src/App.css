@@ -1,0 +1,21 @@
+.container {
+  padding: 10px;
+}
+
+.inputbox {
+	padding: 10px;
+	width: 250px;
+	font-size: 14px;
+}
+
+.button {
+	margin-top: 5px;
+	padding: 5px;
+	width: 75px;
+	font-size: 14px;
+}
+
+.button-close {
+	margin-left: 10px;
+}
+
