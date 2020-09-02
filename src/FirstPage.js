@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react'
 import List from './List';
 import { connect } from 'react-redux';
 import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './actions';
@@ -6,7 +6,7 @@ import { fetchTodos } from './fetchTodos';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class App extends React.Component {
+class App extends Component {
   
   constructor(props) {
     super(props)
