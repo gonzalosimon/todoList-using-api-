@@ -34,7 +34,7 @@ class App extends Component {
       id: new Date(),
       completed: false
     });
-    this.setState({value: ''}) //limpiar input luego de agregar
+    this.setState({value: ''}) //clean input after add
 
   }
 
@@ -46,7 +46,7 @@ class App extends Component {
     })
   }
 
-  //method to remove a todo item from todos array (eliminar todo item)
+  //method to remove a todo item from todos array
   removeTodo(todo) {
     this.props.dispatch({ 
       type: REMOVE_TODO,
@@ -55,7 +55,7 @@ class App extends Component {
 
   }
 
-  // alternar estado to-do
+  // alternate state to-do
   toggleTodo(todo) {
     console.log(todo)
     this.props.dispatch({

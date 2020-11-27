@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './App.css';
 import axios from 'axios';
-import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class List extends Component {
@@ -63,7 +62,7 @@ class List extends Component {
 
 };
 	
-// este método es como una función callback, a removeTodo 
+// this method works as a callback function to removeTodo 
   removeItem(item) {
 	this.props.removeTodo(item)
 }
@@ -92,22 +91,6 @@ class List extends Component {
 			</li>
 		))}
 		</ul>
-
-		<div>
-		{this.state.postData}
-		<ReactPaginate
-			previousLabel={"prev"}
-			nextLabel={"next"}
-			breakLabel={"..."}
-			breakClassName={"break-me"}
-			pageCount={this.state.pageCount}
-			marginPagesDisplayed={2}
-			pageRangeDisplayed={5}
-			onPageChange={this.handlePageClick}
-			containerClassName={"pagination"}
-			subContainerClassName={"pages pagination"}
-			activeClassName={"active"}/>
-	</div>
 		</div>
 	)
  }

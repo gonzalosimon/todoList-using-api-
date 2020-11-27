@@ -7,7 +7,7 @@ export function fetchTodos() {
 		// dispatch BEGIN action
 		dispatch(fetchTodosBegin())
 		//fetch the data
-		return axios.get(`https://jsonplaceholder.typicode.com/todos?_page=1&_limit=8`) 	//only get 8 results for now
+		return axios.get(`https://jsonplaceholder.typicode.com/todos?_page=1&_limit=8`) //only get 8 results for now
 			.then(result => {
 				// after fetching, dispatch SUCCESS action, do some stuff w/ the data
 				dispatch(fetchTodosSuccess(result.data))
