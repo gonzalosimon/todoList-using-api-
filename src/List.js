@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./styles/main.css";
 import "./App.css";
+import "./index.css";
+import "./styles/main.css";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.css";
 
 class List extends Component {
   constructor(props) {
@@ -53,10 +55,26 @@ class List extends Component {
 
   render() {
     return (
-      <div className="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
-        <ul>
+      <div className="items-center justify-centerbg-teal-lightest">
+        <ul className="rounded-t-sm">
           {this.props.items.map((item, index) => (
-            <li className="form-check" key={index}>
+            <li className="flex mb-6 items-center pt-2" key={index}>
+              <button
+                onClick={() => {
+                  this.toggleItem(item);
+                }}
+                className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green-500 border-green-500 hover:bg-green-500"
+              >
+                Done
+              </button>
+              <button
+                onClick={() => {
+                  this.removeItem({ item });
+                }}
+                className="mr-4 flex-no-shrink border-2 text-red-500 border-red-500 p-2 ml-2 rounded hover:text-white hover:bg-red-500"
+              >
+                Remove
+              </button>
               <span
                 style={{
                   textDecoration: item.completed ? "line-through" : "none",
@@ -64,22 +82,6 @@ class List extends Component {
               >
                 {item.title}
               </span>
-              <input
-                onChange={() => {
-                  this.toggleItem(item);
-                }}
-                type="checkbox"
-                checked={item.completed}
-                className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green"
-              />
-              <button
-                onClick={() => {
-                  this.removeItem({ item });
-                }}
-                className="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red"
-              >
-                Remove
-              </button>
             </li>
           ))}
         </ul>

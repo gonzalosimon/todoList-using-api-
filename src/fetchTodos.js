@@ -12,7 +12,7 @@ export function fetchTodos() {
     //fetch the data
     return (
       axios
-        .get(`https://jsonplaceholder.typicode.com/todos?_page=1&_limit=8`) //only get 8 results for now
+        .get(`https://jsonplaceholder.typicode.com/todos?_page=1&_limit=5`) //only get 5 results for now
         .then((result) => {
           // after fetching, dispatch SUCCESS action, do some stuff w/ the data
           dispatch(fetchTodosSuccess(result.data));

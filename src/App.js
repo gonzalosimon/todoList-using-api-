@@ -3,9 +3,9 @@ import List from "./List";
 import { connect } from "react-redux";
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./actions";
 import { fetchTodos } from "./fetchTodos";
+import "./styles/main.css";
 import "./App.css";
-import './index.css';
-
+import "./index.css";
 
 class App extends Component {
   constructor(props) {
@@ -73,34 +73,29 @@ class App extends Component {
     }
 
     return (
-      <div className="bg-teal-lightest row container flex justify-content-center h-100 w-full flex items-center justify-center font-sans">
-        <div className="bg-blue-100 rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-          <div className="px-4 sm:px-6 lg:px-4 xl:px-6 pt-4 pb-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4 mb-4 col-span-12">
-            <h4 className="header card-title">Todo list</h4>
+      <div className="hero container max-w-screen-lg mx-auto bg-teal-lightest">
+        <div className="bg-blue-100 rounded shadow p-6 m-4 ">
+          <div className="sm:px-6 lg:px-4 pt-4 pb-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4 mb-4 col-span-12">
+            <h4 className="text-2xl">Todo list</h4>
             <form onSubmit={this.addTodo}>
-              <div className="flex items-center justify-between flex mt-4">
+              <div className="flex mt-4">
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                  className="shadow appearance-none border rounded w-full py-2 px-4 mr-2 text-grey-darker"
                   type="text"
                   placeholder="What do you need to do?"
                   value={this.state.value}
                   onChange={this.handleOnChange}
                 />
-                <button className="hover:bg-light-blue-200 hover:text-light-blue-800 group flex items-center rounded-md bg-light-blue-100 text-light-blue-600 text-sm font-medium px-4 py-2">
+                <button className="border-2 text-blue-600 border-blue-300 p-2 rounded hover:text-white hover:bg-blue-300">
                   New
                 </button>
               </div>
             </form>
-            <div className="flex-row flex">
-              <div className="list-wrapper">
-                <br />
-                <List
-                  items={this.props.todos}
-                  removeTodo={this.removeTodo}
-                  toggleTodo={this.toggleTodo}
-                />
-              </div>
-            </div>
+            <List 
+              items={this.props.todos}
+              removeTodo={this.removeTodo}
+              toggleTodo={this.toggleTodo}
+            />
           </div>
         </div>
       </div>
