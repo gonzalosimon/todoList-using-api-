@@ -3,24 +3,21 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles/main.css";
 import "./index.css";
 import Home from "./Components/Home.js";
-import "./styles/main.css";
 import Form from "./Components/Form.js";
 
 class App extends Component {
   render() {
     return (
-      <body>
         <Router>
           <Switch>
             <Route exact path="/">
-              <Form/>
+              <Form />
             </Route>
             <Route exact path="/Home">
-              <Home/>
+              <Home />
             </Route>
           </Switch>
         </Router>
-      </body>
     );
   }
 }

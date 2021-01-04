@@ -1,47 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../styles/main.css";
-import "../App.css";
-import "../index.css";
-import axios from "axios";
 
 class List extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      offset: 0,
-      data: [],
-      perPage: 5,
-      currentPage: 0,
-    };
-
-    this.handlePageClick = this.handlePageClick.bind(this);
-  }
-
-  receivedData() {
-    axios.get(`https://jsonplaceholder.typicode.com/todos`).then((result) => {
-      const data = result.data;
-      this.setState({
-        pageCount: Math.ceil(data.length / this.state.perPage),
-      });
-    });
-  }
-
-  handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    const offset = selectedPage * this.state.perPage;
-
-    this.setState(
-      {
-        currentPage: selectedPage,
-        offset: offset,
-      },
-      () => {
-        this.receivedData();
-      }
-    );
-  };
-
   // this method works as a callback function to removeTodo
   removeItem(item) {
     this.props.removeTodo(item);
@@ -54,10 +15,10 @@ class List extends Component {
 
   render() {
     return (
-      <div className="items-center justify-centerbg-teal-lightest">
+      <div>
         <ul className="rounded-t-sm">
           {this.props.items.map((item, index) => (
-            <li className="flex mb-6 items-center pt-2" key={index}>
+            <li className="flex mb-6 items-center pt-2">
               <button
                 onClick={() => {
                   this.toggleItem(item);

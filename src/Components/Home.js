@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import List from "./List";
-import { 
-  BrowserRouter, 
-} from "react-browser-router";
 import { connect } from "react-redux";
+import List from "./List";
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../Actions/actions";
 import { fetchTodos } from "../Actions/fetchTodos";
 import "../styles/main.css";
@@ -75,12 +72,11 @@ class Home extends Component {
     }
 
     return (
-      <BrowserRouter>
-      
-      <div className="md:mt-20 hero container max-w-screen-lg mx-auto">
+     <div>
+      <div className="md:mt-20 max-w-screen-lg mx-auto">
         <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded shadow p-5 m-3">
-          <div className="sm:px-6 lg:px-4 pt-4 pb-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4 mb-4 col-span-12">
-            <h4 className="text-2xl">Todo list</h4>
+          <div className="space-y-6">
+            <h4 className="text-2xl">Tasks List</h4>
             <form onSubmit={this.addTodo}>
               <div className="flex mt-4">
                 <input
@@ -103,7 +99,7 @@ class Home extends Component {
           </div>
         </div>
       </div>
-      </BrowserRouter>
+     </div>
     );
   }
 }
