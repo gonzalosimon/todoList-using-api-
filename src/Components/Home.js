@@ -4,10 +4,10 @@ import {
   BrowserRouter, 
 } from "react-browser-router";
 import { connect } from "react-redux";
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./actions";
-import { fetchTodos } from "./fetchTodos";
-import "./styles/main.css";
-import "./index.css";
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../Actions/actions";
+import { fetchTodos } from "../Actions/fetchTodos";
+import "../styles/main.css";
+import "../index.css";
 
 class Home extends Component {
   constructor(props) {

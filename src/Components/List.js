@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./styles/main.css";
-import "./App.css";
-import "./index.css";
-import "./styles/main.css";
+import "../styles/main.css";
+import "../App.css";
+import "../index.css";
 import axios from "axios";
 
 class List extends Component {

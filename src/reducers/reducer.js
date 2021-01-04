@@ -1,9 +1,9 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./actions";
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../Actions/actions";
 import {
   FETCH_TODOS_BEGIN,
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_FAILURE,
-} from "./fetchActions";
+} from "../Actions/fetchActions";
 
 //define initial state
 const initialState = {
