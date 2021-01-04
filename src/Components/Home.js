@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import List from "./List";
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../Actions/actions";
 import { fetchTodos } from "../Actions/fetchTodos";
-import "../styles/main.css";
-import "../index.css";
+import "tailwindcss/tailwind.css";
+import "../styles/index.css";
 
 class Home extends Component {
   constructor(props) {

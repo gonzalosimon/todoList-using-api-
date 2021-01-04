@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../styles/main.css";
+import "tailwindcss/tailwind.css";
 
 class List extends Component {
   // this method works as a callback function to removeTodo

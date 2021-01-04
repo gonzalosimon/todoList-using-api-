@@ -11,7 +11,6 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.2",
     "history": "^4.10.1",
-    "postcss-cli": "^8.3.0",
     "react": "^16.13.1",
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.13.1",
@@ -19,13 +18,15 @@
     "react-paginate": "^6.3.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "routes": "^2.1.0"
+    "routes": "^2.1.0",
+    "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
+    "start": "npm run build:style && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1"
   }
 }
