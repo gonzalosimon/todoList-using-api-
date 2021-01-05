@@ -75,7 +75,7 @@ class Home extends Component {
       <div className="md:mt-20 max-w-screen-lg mx-auto">
         <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded shadow p-5 m-3">
           <div className="space-y-6">
-            <h4 className="text-2xl">Tasks List</h4>
+            <h4 className="text-2xl">Task List</h4>
             <form onSubmit={this.addTodo}>
               <div className="flex mt-4">
                 <input
