@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./styles/main.css";
-import "./index.css";
+import "tailwindcss/tailwind.css";
+import "./styles/index.css";
 import Home from "./Components/Home.js";
 import Form from "./Components/Form.js";
 
