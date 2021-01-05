@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "tailwindcss/tailwind.css";
 import "../styles/index.css";
 import TextField from "@material-ui/core/TextField";
 

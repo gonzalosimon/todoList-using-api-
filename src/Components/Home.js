@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import List from "./List";
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../Actions/actions";
 import { fetchTodos } from "../Actions/fetchTodos";
-import "tailwindcss/tailwind.css";
 import "../styles/index.css";
 
 class Home extends Component {
@@ -80,7 +79,7 @@ class Home extends Component {
             <form onSubmit={this.addTodo}>
               <div className="flex mt-4">
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-4 mr-2 text-grey-darker"
+                  className="shadow appearance-none border rounded w-full py-2 px-2 mr-2 text-grey-darker"
                   type="text"
                   placeholder="What do you need to do?"
                   value={this.state.value}
